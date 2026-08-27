@@ -1,0 +1,10 @@
+*.txt
+
+bin/
+obj/
+node_modules/
+.vs/
+
+*.key
+*.pfx
+tempkey.jwk
