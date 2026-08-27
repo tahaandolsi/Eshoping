@@ -1,42 +1,161 @@
-# Eshoping
+Eshoping
 
-Eshoping is a full-stack e-commerce application built using a **microservices architecture**.
+Eshoping is a full-stack e-commerce application built using a microservices architecture.
 
 The application provides an online shopping experience with product management, shopping basket, authentication, discounts, and order processing.
 
-## Architecture
+Architecture
 
 The backend is divided into several independent services:
 
-- **Catalog Service** – Product catalog and product management
-- **Basket Service** – Shopping basket management
-- **Discount Service** – Discount and coupon management
-- **Ordering Service** – Order processing and management
-- **Identity Service** – Authentication and authorization
-- **API Gateway** – Centralized API routing using Ocelot
-- **Angular Client** – Frontend application
+Catalog Service – Product catalog and product management
+
+Basket Service – Shopping basket management
+
+Discount Service – Discount and coupon management
+
+Ordering Service – Order processing and management
+
+Identity Service – Authentication and authorization
+
+API Gateway – Centralized API routing using Ocelot
+
+Angular Client – Frontend application
 
 The services communicate through REST APIs and gRPC where appropriate.
 
-## Technologies
+Technologies
 
-### Backend
+Backend
 
-- C#
-- ASP.NET Core
-- .NET
-- Entity Framework Core
-- REST API
-- gRPC
-- Ocelot API Gateway
-- IdentityServer
-- Docker
-- Docker Compose
+C#
 
-### Frontend
+ASP.NET Core
 
-- Angular
-- TypeScript
-- HTML5
-- SCSS
-- Bootstrap
+.NET
+
+Entity Framework Core
+
+REST API
+
+gRPC
+
+Ocelot API Gateway
+
+IdentityServer
+
+Docker
+
+Docker Compose
+
+Frontend
+
+Angular
+
+TypeScript
+
+HTML5
+
+SCSS
+
+Bootstrap
+
+Features
+
+User authentication and authorization
+
+Product catalog and product management
+
+Product search
+
+Shopping basket
+
+Discount and coupon management
+
+Order processing and management
+
+API Gateway routing
+
+Microservices architecture
+
+Docker containerization
+
+How the Application Works
+
+The application follows a microservices architecture.
+
+When a user interacts with the Angular frontend, requests are sent through the API Gateway. The Gateway routes each request to the appropriate microservice.
+
+For example:
+
+The user browses products through the Angular client.
+
+The request is routed through the Ocelot API Gateway.
+
+The Catalog Service retrieves product information.
+
+When the user adds a product to the basket, the Basket Service manages the shopping cart.
+
+The Discount Service handles discount calculations.
+
+During checkout, the Ordering Service processes the order.
+
+The Identity Service handles authentication and authorization.
+
+This separation allows each business domain to be developed and maintained independently.
+
+Project Structure
+
+Eshoping/
+│
+├── ApiGateways/
+│   └── Ocelot.ApiGateway/
+│
+├── Infrastructure/
+│   ├── Common.Logging/
+│   ├── EShopping.Identity/
+│   └── EventBus.Messages/
+│
+├── Services/
+│   ├── Basket/
+│   ├── Catalog/
+│   ├── Discount/
+│   └── Ordering/
+│
+├── client/
+│   └── Angular application
+│
+├── docker-compose.yml
+├── docker-compose.override.yml
+└── Eshoping.sln
+
+Getting Started
+
+Prerequisites
+
+.NET SDK
+
+Node.js and npm
+
+Docker Desktop
+
+Git
+
+Clone the repository
+
+git clone https://github.com/tahaandolsi/Eshoping.git
+cd Eshoping
+
+Run with Docker
+
+docker compose up --build
+
+Run the Angular application
+
+cd client
+npm install
+ng serve
+
+The Angular application will be available at:
+
+http://localhost:4200
